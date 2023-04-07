@@ -1,100 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Random Activity Generator</title>
-	<style>
-		body {
-			background-color: cream;
-			color: #444444;
-			font-family: Arial, sans-serif;
-			font-size: 16px;
-			line-height: 1.5;
-			margin: 0;
-			padding: 0;
-		}
-
-		h1 {
-			font-size: 36px;
-			font-weight: bold;
-			margin: 0 0 20px;
-			text-align: center;
-			text-transform: uppercase;
-		}
-
-		p {
-			margin: 0 0 20px;
-			text-align: center;
-		}
-
-		label {
-			display: block;
-			margin-bottom: 10px;
-			text-align: center;
-			font-weight: bold;
-			text-transform: uppercase;
-		}
-
-		input[type="text"], input[type="submit"] {
-			background-color: #f2f2f2;
-			border: none;
-			border-radius: 5px;
-			box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
-			display: block;
-			font-size: 16px;
-			margin-bottom: 20px;
-			padding: 10px;
-			text-align: center;
-			width: 100%;
-		}
-
-		/* Style for the button */
-		.button {
-			background-color: #4CAF50;
-			border: none;
-			color: white;
-			padding: 15px 32px;
-			text-align: center;
-			text-decoration: none;
-			display: inline-block;
-			font-size: 16px;
-			margin: 4px 2px;
-			cursor: pointer;
-			border-radius: 10px;
-			text-transform: uppercase;
-			letter-spacing: 2px;
-		}
-
-		/* Style for the container */
-		.container {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			height: 100vh;
-			background-color: cream;
-		}
-	</style>
+    <link rel="stylesheet" href="style.css">
+	<script defer type="text/javascript" src="index.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">	<title>Random Activity Generator</title>
 </head>
 <body>
 	<!-- Container -->
-	<div class="container">
+	<div id="headerDiv">
 		<!-- Page header -->
 		<h1>Random Activity Generator</h1>
 
 		<!-- Text paragraph -->
 		<p>Having trouble coming up with something to do today?</p>
-
-		<!-- Button -->
-		<button class="button">I'M BORED</button>
+    </div>
+    	<!-- Button -->
+		<button id="button">I'M BORED</button>
 
 		<!-- Image -->
-		<img src="https://source.unsplash.com/random/400x300" alt="Random image">
+		<div id="imageDiv">
+			<img id="activity-image" src="https://themindfool.com/wp-content/uploads/2019/11/What-should-I-do-today-1600x900.jpg" alt="Random image" />
+			<!-- hidden="until-mouseover" -->
+			<div id="details-div" hidden>
+				<p id="activity-detail-name" class="details">Activity</p>
+				<p id="activity-detail-type" class="details">Type</p>
+				<p id="activity-detail-participants" class="details">Participants</p>  
+			</div>
+		</div>
+
 
 		<!-- Form -->
-		<form id ="addYourOwnActivityForm">
-			<label for="activity">What do you feel like doing today?</label>
-			<input type="text" id="activity" name="activity" placeholder="Enter an activity...">
-			<input type="submit" value="Generate">
+		<form id ="activity-form">
+            <label id="formLabel" for="activity">What do you feel like doing today?</label>
+            <input id="activity-form-submit" type="submit" value="Add Your Own Activity">
+			<input type="text" id="input-activity-name" name="activity" placeholder="Enter an Activity">
+			<input type="text" id="input-activity-type" name="activity-type" placeholder="Enter the Activity Type">
+            <input type="text" id="input-activity-participants" name="activity-participants" placeholder="Enter the Number of Participants">
+            <input type="text" id= "input-activity-image" name="activity-image-url" placeholder="Enter an Image URL">
 		</form>
 	</div>
 </body>
